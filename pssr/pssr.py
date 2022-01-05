@@ -68,7 +68,6 @@ class PSMic(AudioSource):
             #self.pos = [-0.04, -0.02, 0.02, 0.04] #sum(Xm)=0 (soma das posições = 0 (origem e centro do phase array))
 
         def read(self, size):
-            """ definindo"""
 
             return self.pyaudio_stream.read(size, exception_on_overflow=False)
 
@@ -126,6 +125,8 @@ class PSRecognizer(Recognizer):
         return chosen
 
     def delay_sum_best_guess(self, frame_data, angle_range, nChannels, sample_rate=16000, sample_width=2):
+        """
+        """
 
         # generate the WAV file contents
         with io.BytesIO() as wav_file:
@@ -170,7 +171,7 @@ class PSRecognizer(Recognizer):
         return steering
 
 
-    def listen(self, source, angle_range=[0,366,10], timeout=None, phrase_time_limit=None, snowboy_configuration=None):
+    def listen(self, source, angle_range=[0,361,10], timeout=None, phrase_time_limit=None, snowboy_configuration=None):
         """
         Records a single phrase from ``source`` (an ``AudioSource`` instance) into an ``AudioData`` instance, which it returns.
         This is done by waiting until the audio has an energy above ``recognizer_instance.energy_threshold`` (the user has started speaking), and then recording until it encounters ``recognizer_instance.pause_threshold`` seconds of non-speaking or there is no more audio input. The ending silence is not included.
