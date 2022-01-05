@@ -1,7 +1,8 @@
 #%%
-import pssr 
+from pssr import pssr 
 from speech_recognition import UnknownValueError, RequestError, Recognizer
 
+print('oi')
 r = Recognizer() #recognizes audio, outputs transcript
 ps = pssr.PSRecognizer() #PSRecognizer instance to listen and generate the audio
 psmic = pssr.PSMic(nChannels=3) #ps eye mic array

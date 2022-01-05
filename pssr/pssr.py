@@ -270,8 +270,3 @@ class PSRecognizer(Recognizer):
         return AudioData(frame_data_ds, source.SAMPLE_RATE, source.SAMPLE_WIDTH)
 
 
-    
-
-
-### https://gist.github.com/hadware/8882b980907901426266cb07bfbfcd20#file-bytes_to_wav-py
-
